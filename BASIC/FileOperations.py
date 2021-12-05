@@ -15,7 +15,7 @@ def main():
             print(x)
         print(len(data))
         i=len(data)-1
-        while i>0:
+        while i>=0:
             f3.write(data[i])
             i=i-1
         f1.close()
