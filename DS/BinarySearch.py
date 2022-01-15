@@ -15,9 +15,9 @@ def BinarySearch(num,numList):
     return found
 
 def main():
-    numberList = [1,2,4,5,6,7,23,43,56,67,89,98,876] #Ordered List
+    numberlist = [1,2,4,5,6,7,23,43,56,67,89,98,876] #Ordered List
     number = int(raw_input("What number are you looking for in the list? "))
-    isitFound = BinarySearch(number,numberList)
+    isitFound = BinarySearch(number,numberlist)
     if isitFound:
         print "Number is in the list"
     else:
