@@ -8,9 +8,9 @@ def main():
         print("Dictionary - Keys: ", dict.keys())
         print("Dictionary - Values: ", dict.values())
         print("Dictionary - Printing Value 1: ", dict.get('key1'))
+        print("Tiny Dict is here: ", tinydict.keys(), tinydict.values())
     except Exception as e:
         print(e)
-
 
 if __name__ == '__main__':
     main()
