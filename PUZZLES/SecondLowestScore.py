@@ -18,20 +18,21 @@ if __name__ == '__main__':
     for _ in range(student_count):
         name = input()
         score = float(input())
-        students.append([name,score])
-    students.sort(key=lambda x:x[1])
-    lowest = min(students,key=lambda x:x[1])
-    mins = [ x for x in students if x[1] == lowest[1]]
+        students.append([name, score])
+    students.sort(key=lambda x: x[1])
+    lowest = min(students, key=lambda x: x[1])
+    mins = [x for x in students if x[1] == lowest[1]]
     for x in mins:
         students.remove(x)
-    #print(students)
-    #print(students) - Printed students here as the test case where the lowest occurred more than once failed
-    secondLowest = min(students,key=lambda x:x[1])
-    secondLowestList = [ x[0] for x in students if x[1] == secondLowest[1]]
-    secondLowestList.sort()
+    # print(students)
+    # print(students) - Printed students here as the test case where the
+    # lowest occurred more than once failed
+    secondLowest = min(students, key=lambda x: x[1])
+    secondLowestList = sorted(
+        [x[0] for x in students if x[1] == secondLowest[1]])
     for student in secondLowestList:
         print(student)
     #assumedLowest = 10000
     #lowest = [ x for x in students if x[1] < assumedLowest ]
-    #print(lowest)
-    #print(students)
+    # print(lowest)
+    # print(students)
