@@ -17,9 +17,10 @@ if __name__ == '__main__':
         for i in scores:
             if i < 0 or i > 100:
                 exit()
-        if n < 2  or n > 5: 
+        if n < 2 or n > 5:
             exit()
     query_name = input()
     for student in student_marks:
         if student == query_name:
-            print("{:.2f}".format(sum(student_marks[student])/len(student_marks[student]))) 
+            print("{:.2f}".format(
+                sum(student_marks[student]) / len(student_marks[student])))
