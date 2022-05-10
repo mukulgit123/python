@@ -14,7 +14,7 @@
 # print
 if __name__ == '__main__':
     N = int(input())
-    myList = [ x for x in range(N)]
+    myList = [x for x in range(N)]
     executeCmd = []
     runCLI = True
     while(runCLI):
@@ -23,7 +23,7 @@ if __name__ == '__main__':
         except EOFError as e:
             print(e)
         if executeCmd[0] == 'insert':
-            myList.insert(int(executeCmd[2]),int(executeCmd[1]))
+            myList.insert(int(executeCmd[2]), int(executeCmd[1]))
         elif executeCmd[0] == 'print':
             print(myList)
         elif executeCmd[0] == 'remove':

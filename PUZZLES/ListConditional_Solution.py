@@ -24,17 +24,17 @@ if __name__ == '__main__':
             lines.append(line)
         # executeCmd = input().split()
     except EOFError as e:
-            pass
+        pass
     # print(lines)
-    for i in range(0,N):
+    for i in range(0, N):
         # print(line)
         executeCmd = list(lines[i].split())
-         # print(executeCmd)
+        # print(executeCmd)
         if executeCmd[0] == 'insert':
-            myList.insert(int(executeCmd[1]),int(executeCmd[2]))
-            #print(executeCmd[2])
-            #print(executeCmd[1])
-            #print(myList)
+            myList.insert(int(executeCmd[1]), int(executeCmd[2]))
+            # print(executeCmd[2])
+            # print(executeCmd[1])
+            # print(myList)
         elif executeCmd[0] == 'print':
             print(myList)
         elif executeCmd[0] == 'remove':
