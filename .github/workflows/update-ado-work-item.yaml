@@ -10,7 +10,7 @@ jobs:
         uses: dc-ag/azure-devops-pr-notification@main
         with:
           repo-token: ${{ secrets.BAKERY_GITHUB_TOKEN }}
-          devops-work-item-regex: "\d+"
+          devops-work-item-regex: "[0-9]+"
           set-to-state: "In Progress"
           add-pr-link: true
           dont-set-state-while-prs-open: false
