@@ -34,9 +34,9 @@ def main():
     number = int(raw_input("What number are you looking for in the list? "))
     isitFound = BinarySearch(number, numberlist)
     if isitFound:
-        print "Number is in the list"
+        print("Number is in the list")
     else:
-        print "Number is not in the list"
+        print("Number is not in the list")
 
 
 if __name__ == '__main__':

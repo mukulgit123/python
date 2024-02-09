@@ -5,15 +5,15 @@ def main():
     firstList = [52, 14, 23, 18, 22, 8, 189, 98]
     secondList = [72, -14, 84, -98, 77, -22]
     crossjoin = []
-    result = []
+    setsWithSumZero = []
     try:
         for i in range(len(firstList)):
             for j in range(len(secondList)):
                 crossjoin.append((firstList[i], secondList[j]))
                 if firstList[i] + secondList[j] == 0:
-                    result.append((firstList[i], secondList[j]))
-        print(crossjoin)
-        print(result)
+                    setsWithSumZero.append((firstList[i], secondList[j]))
+        print("Cross Join is:\n",crossjoin)
+        print("Sets whose sum is zero are:\n",setsWithSumZero)
     except Exception as e:
         print(e)
 

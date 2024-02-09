@@ -15,12 +15,12 @@ def LinearSearch(myItem, myList):
 
 def main():
     shopping = ["apple", "banana", "chocolate", "pasta"]
-    item = raw_input("What do you want to find? ")
+    item = input("What do you want to find? ")
     isitFound = LinearSearch(item, shopping)
     if isitFound:
-        print "Our item is in the list"
+        print("Our item is in the list")
     else:
-        print "Our item is not in the list"
+        print("Our item is not in the list")
 
 
 if __name__ == '__main__':

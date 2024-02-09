@@ -16,9 +16,9 @@ def main():
     item = raw_input("What do you want to find? ")
     position = LinearSearchSentinal(item, shopping)
     if position != 0:
-        print str(item) + " is found in the list at " + str(position)
+        print(str(item) + " is found in the list at " + str(position))
     else:
-        print "Our item is not in the list"
+        print("Our item is not in the list")
 
 
 if __name__ == '__main__':

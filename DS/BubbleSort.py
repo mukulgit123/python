@@ -16,9 +16,9 @@ def BubbleSort(myList):
 
 def main():
     unsortedList = [8, 2, 72, 4, 65, 6]
-    print "Unsorted List is: " + str(unsortedList)
+    print("Unsorted List is: " + str(unsortedList))
     sortedList = BubbleSort(unsortedList)
-    print "Sorted List is: " + str(sortedList)
+    print("Sorted List is: " + str(sortedList))
 
 
 if __name__ == '__main__':
