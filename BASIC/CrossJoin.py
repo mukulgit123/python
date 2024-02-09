@@ -12,8 +12,8 @@ def main():
                 crossjoin.append((firstList[i], secondList[j]))
                 if firstList[i] + secondList[j] == 0:
                     setsWithSumZero.append((firstList[i], secondList[j]))
-        print("Cross Join is:\n",crossjoin)
-        print("Sets whose sum is zero are:\n",setsWithSumZero)
+        print("Cross Join is:\n", crossjoin)
+        print("Sets whose sum is zero are:\n", setsWithSumZero)
     except Exception as e:
         print(e)
 
