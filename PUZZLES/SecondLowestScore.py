@@ -11,9 +11,9 @@
 # Fike
 # 21
 if __name__ == '__main__':
-    students = []
-    student_count = int(input())
-    if student_count > 5 and student_count < 2:
+    students = [] #Created students array
+    student_count = int(input()) #Entered the count of students
+    if student_count > 5 and student_count < 2: #Constraint for number of students
         exit()
     for _ in range(student_count):
         name = input()

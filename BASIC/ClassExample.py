@@ -4,8 +4,6 @@ class student:
         self.age = ""
 
     def enroll(self, name, age):
-        self.name = name
-        self.age  = age
         return self.name,self.age
     
     def display(self):

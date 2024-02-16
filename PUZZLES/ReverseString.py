@@ -5,8 +5,7 @@ def revString(myString):
     # Method1 - Slicing.
     # With indexing we manipulate or return a single item but with Slicin we can manipulate multiple items.
     # To access parts of sequences like strings, tuples, and lists is known as slicing in Python.
-    # There are two variants of the slicing syntax: sequence[start:stop] and
-    # sequence[start:stop:step]
+    # There are two variants of the slicing syntax
     print("\nReversed string using Slicing method is: ", myString[::-1])
     # Method2 - With Loop
     reverseString = []  # Declared Null Array for reverse string
