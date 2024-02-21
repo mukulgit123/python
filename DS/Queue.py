@@ -11,12 +11,13 @@ class Queue:
             return None
         else:
             return self.queue.pop(0)
-    
+
     def display(self):
         print(self.queue)
 
     def size(self):
         return len(self.queue)
+
 
 if __name__ == '__main__':
     q = Queue()
@@ -32,4 +33,3 @@ if __name__ == '__main__':
 
     print("After removing an element")
     q.display()
-    
