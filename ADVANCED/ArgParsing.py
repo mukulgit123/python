@@ -1,3 +1,5 @@
+# *args can be n number of arguments of any data type
+# **kwargs can be any number of key, value pair arguments
 def myfunction(*args, **kwargs):
     print(args[0])
     print(args[1])
