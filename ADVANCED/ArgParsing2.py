@@ -21,4 +21,4 @@ for opt, arg in opts:
         filename = arg
 
 with open(filename, 'a') as f:
-    f.write("\n"+message)
+    f.write("\n" + message)
