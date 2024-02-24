@@ -1,6 +1,6 @@
 class Person:
     def __init__(self, name, age, gender):
-        self.__name = name # Two underscores set the attributes to private
+        self.__name = name  # Two underscores set the attributes to private
         self.__age = age
         self.__gender = gender
 
@@ -27,7 +27,9 @@ class Person:
     def mymethod():
         print("Hello World!!")
 
-Person.mymethod() # For calling a method of a class without instantiating an object of the class.
+
+# For calling a method of a class without instantiating an object of the class.
+Person.mymethod()
 p1 = Person("Mike", 29, 'm')
 print(p1.Name)
 p2 = Person("Not here", -1, 'm')
