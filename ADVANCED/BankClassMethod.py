@@ -1,5 +1,6 @@
 from datetime import datetime
 
+
 class BankAccount:
     # Class variable to keep track of all accounts
     all_accounts = []
@@ -23,13 +24,15 @@ class BankAccount:
     @classmethod
     def get_oldest_account(cls):
         """Class method to get the oldest account."""
-        oldest_account = min(cls.all_accounts, key=lambda account: account.creation_date)
+        oldest_account = min(cls.all_accounts,
+                             key=lambda account: account.creation_date)
         return oldest_account
 
     @staticmethod
     def calculate_interest(balance):
         """Static method to calculate interest for a given balance."""
-        # The interest rate is a class variable, so it is accessed using the class name
+        # The interest rate is a class variable, so it is accessed using the
+        # class name
         interest = balance * BankAccount.interest_rate
         return interest
 
@@ -46,6 +49,7 @@ class BankAccount:
         else:
             print("Insufficient funds!")
 
+
 # Creating some bank accounts
 account1 = BankAccount("Alice", 1000)
 account2 = BankAccount("Bob", 2000)
@@ -60,7 +64,8 @@ interest_on_balance = BankAccount.calculate_interest(1500)
 
 # Displaying results
 print(f"Total balance of all accounts: ${total_balance}")
-print(f"The oldest account was created by {oldest_account.account_holder} on {oldest_account.creation_date}")
+print(
+    f"The oldest account was created by {oldest_account.account_holder} on {oldest_account.creation_date}")
 print(f"Interest on balance $1500: ${interest_on_balance}")
 
 # Alternatively, we can use the static method with an instance
