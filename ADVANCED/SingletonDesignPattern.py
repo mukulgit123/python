@@ -1,10 +1,12 @@
 from abc import ABCMeta, abstractstaticmethod
 
+
 class IPerson(metaclass=ABCMeta):
-    
+
     @abstractstaticmethod
     def print_data(self):
         """ Implement in child class. """
+
 
 class PersonSingleton(IPerson):
 
@@ -12,22 +14,23 @@ class PersonSingleton(IPerson):
 
     @staticmethod
     def get_instance():
-        if PersonSingleton.__instance == None:
+        if PersonSingleton.__instance is None:
             PersonSingleton("Some Name", 20)
         return PersonSingleton.__instance
 
     def __init__(self, name, age):
-        if PersonSingleton.__instance != None:
+        if PersonSingleton.__instance is not None:
             raise Exception("Singleton can't be instatiatied more than once.")
         else:
             self.name = name
             self.age = age
             PersonSingleton.__instance = self
-     
+
     @staticmethod
     def print_data():
         print(PersonSingleton.__instance.name)
         print(PersonSingleton.__instance.age)
+
 
 p = PersonSingleton("Mike", 20)
 print(p)
