@@ -42,9 +42,6 @@ class ParentDeparment(IDepartment):
         self.employees += dept.employees
 
     def print_department(self):
-        print(f"Parent department: {self.employees}")
-
-    def print_department(self):
         print("Parent Department")
         print(f"Parent department base employees: {self.base_employees}")
         for dept in self.sub_depts:
