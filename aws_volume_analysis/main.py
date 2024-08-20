@@ -4,9 +4,11 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 
+
 class VolumeAnalyzer:
     def __init__(self):
-        self.aws_manager = AWSVolumeManager(region_name='eu-west-1', profile_name='my-profile')
+        self.aws_manager = AWSVolumeManager(
+            region_name='eu-west-1', profile_name='my-profile')
         self.k8s_manager = KubernetesManager()
 
     def analyze_volumes(self):
@@ -27,9 +29,11 @@ class VolumeAnalyzer:
         unused_volumes = total_volumes - used_volumes
         logging.info(f"Total volumes: {total_volumes}")
         logging.info(f"Total volumes used by PVCs: {len(k8s_ebs_volumes)}")
-        logging.info(f"Total volumes attached to Nodes: {len(aws_node_volume_ids)}")
+        logging.info(
+            f"Total volumes attached to Nodes: {len(aws_node_volume_ids)}")
         logging.info(f"Total used volumes: {used_volumes}")
         logging.info(f"Total unused volumes: {unused_volumes}")
+
 
 if __name__ == "__main__":
     analyzer = VolumeAnalyzer()

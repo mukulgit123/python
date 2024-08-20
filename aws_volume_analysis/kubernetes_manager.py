@@ -1,11 +1,12 @@
 from kubernetes import client, config
 
+
 class KubernetesManager:
     def __init__(self):
         config.load_kube_config()  # Assumes kubeconfig is set up
         self.v1 = client.CoreV1Api()
 
-    def get_all_pv_ebs_volumes(self)->dict:
+    def get_all_pv_ebs_volumes(self) -> dict:
         '''Returns a dictionary of EBS volumes used by PVCs'''
         pv_list = self.v1.list_persistent_volume().items
         ebs_volumes = []

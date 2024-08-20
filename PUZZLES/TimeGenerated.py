@@ -29,11 +29,13 @@ def prompt_messages():
     if check_logs_timestamp():
         input_message = "would you like to change the log timestamp from log collection time to log creation time?" \
                         "\nEnter Yes/No\n"
-        print_notice("We have recognized your logs timestamp is set to: Log collection time\n")
+        print_notice(
+            "We have recognized your logs timestamp is set to: Log collection time\n")
     else:
         input_message = "would you like to change the log timestamp from log creation time to log collection time?" \
                         "\nEnter Yes/No\n"
-        print_notice("We have recognized your logs timestamp is set to: Log creation time\n")
+        print_notice(
+            "We have recognized your logs timestamp is set to: Log creation time\n")
     # to be compatible with both python 2.7 and python 3
     try:
         response = raw_input(input_message)
@@ -50,8 +52,13 @@ def is_logs_collection_time():
     """
     :return: True if current timegenerated configuration is set to log collection time
     """
-    grep = subprocess.Popen(["grep", "-i", "'Timestamp' => OMS::Common::fast_utc_to_iso8601_format(Time.now.utc),",
-                             oms_agent_field_mapping_configuration], stdout=subprocess.PIPE)
+    grep = subprocess.Popen(
+        [
+            "grep",
+            "-i",
+            "'Timestamp' => OMS::Common::fast_utc_to_iso8601_format(Time.now.utc),",
+            oms_agent_field_mapping_configuration],
+        stdout=subprocess.PIPE)
     o, e = grep.communicate()
     output_decode = o.decode(encoding='UTF-8')
     if e is not None:
@@ -66,8 +73,13 @@ def is_logs_creation_time():
     """
     :return: True if current timegenerated configuration is set to log creation time
     """
-    grep = subprocess.Popen(["grep", "-i", "'Timestamp' => OMS::Common::fast_utc_to_iso8601_format(Time.at(time).utc),",
-                             oms_agent_field_mapping_configuration], stdout=subprocess.PIPE)
+    grep = subprocess.Popen(
+        [
+            "grep",
+            "-i",
+            "'Timestamp' => OMS::Common::fast_utc_to_iso8601_format(Time.at(time).utc),",
+            oms_agent_field_mapping_configuration],
+        stdout=subprocess.PIPE)
     o, e = grep.communicate()
     output_decode = o.decode(encoding='UTF-8')
     if e is not None:
@@ -99,11 +111,17 @@ def change_events_timegenerated():
     print_notice(
         "Ateempting to change TimeGenerated configuration configuration")
     if check_logs_timestamp():
-        sed = subprocess.Popen(["sed", "-i", collect_to_create,
-                                oms_agent_field_mapping_configuration], stdout=subprocess.PIPE)
+        sed = subprocess.Popen(["sed",
+                                "-i",
+                                collect_to_create,
+                                oms_agent_field_mapping_configuration],
+                               stdout=subprocess.PIPE)
     else:
-        sed = subprocess.Popen(["sed", "-i", create_to_collect,
-                                oms_agent_field_mapping_configuration], stdout=subprocess.PIPE)
+        sed = subprocess.Popen(["sed",
+                                "-i",
+                                create_to_collect,
+                                oms_agent_field_mapping_configuration],
+                               stdout=subprocess.PIPE)
     o, e = sed.communicate()
     if e is not None:
         print_error("Failed to change log TimeGenerated configuration")
@@ -117,15 +135,22 @@ def validate_workspace(workspace_id):
     Check if the given workspace is the one connected to the agent
     """
 
-    grep1 = subprocess.Popen(["grep", "-ri", "WORKSPACE_ID=", oms_agent_extract_ws_id_url], stdout=subprocess.PIPE)
-    grep2 = subprocess.Popen(["grep", "-v", "%"], stdin=grep1.stdout, stdout=subprocess.PIPE)
+    grep1 = subprocess.Popen(["grep",
+                              "-ri",
+                              "WORKSPACE_ID=",
+                              oms_agent_extract_ws_id_url],
+                             stdout=subprocess.PIPE)
+    grep2 = subprocess.Popen(
+        ["grep", "-v", "%"], stdin=grep1.stdout, stdout=subprocess.PIPE)
     o, e = grep2.communicate()
     output_decoded = o.decode(encoding='UTF-8')
     if e is not None:
         print_error("Failed to validate agent's workspace")
     elif output_decoded is not None and output_decoded != "":
         # Extract the workspace id from the agent configuration
-        current_ws_id = re.search("(?<=WORKSPACE_ID=).*", output_decoded).group(0)
+        current_ws_id = re.search(
+            "(?<=WORKSPACE_ID=).*",
+            output_decoded).group(0)
         if current_ws_id != workspace_id:
             print_error(
                 "Failed to run the script.\n"
@@ -137,7 +162,10 @@ def validate_workspace(workspace_id):
 
 def restart_omsagent(workspace_id):
     print_notice("Attempting to restart the OMS agent")
-    agent_restart = subprocess.Popen(["sudo", oms_agent_service_control, "restart", workspace_id],
+    agent_restart = subprocess.Popen(["sudo",
+                                      oms_agent_service_control,
+                                      "restart",
+                                      workspace_id],
                                      stdout=subprocess.PIPE,
                                      stderr=subprocess.PIPE)
     o, e = agent_restart.communicate()
