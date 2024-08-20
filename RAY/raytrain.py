@@ -4,6 +4,7 @@ from torch.utils.data import DataLoader
 from torchvision import datasets
 from torchvision.transforms import ToTensor
 
+
 def get_dataset():
     return datasets.FashionMNIST(
         root="/tmp/data",
@@ -11,6 +12,7 @@ def get_dataset():
         download=True,
         transform=ToTensor(),
     )
+
 
 class NeuralNetwork(nn.Module):
     def __init__(self):
