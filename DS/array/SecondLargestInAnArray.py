@@ -1,7 +1,7 @@
 def secondLargest(arr):
     largest = arr[0]
     secondLargest = int(-1e9)
-    for i in range(1,len(arr)):
+    for i in range(1, len(arr)):
         if arr[i] > largest:
             secondLargest = largest
             largest = arr[i]
@@ -9,10 +9,11 @@ def secondLargest(arr):
             secondLargest = arr[i]
     return secondLargest
 
+
 def secondSmallest(arr):
     smallest = arr[0]
     secondSmallest = int(1e9)
-    for i in range(1,len(arr)):
+    for i in range(1, len(arr)):
         if arr[i] < smallest:
             secondSmallest = smallest
             smallest = arr[i]
@@ -20,12 +21,14 @@ def secondSmallest(arr):
             secondSmallest = arr[i]
     return secondSmallest
 
+
 def main():
-    arr = [1,2,4,7,7,5,19,13,16,15]
+    arr = [1, 2, 4, 7, 7, 5, 19, 13, 16, 15]
     sLargest = secondLargest(arr)
     sSmallest = secondSmallest(arr)
     print(sLargest)
     print(sSmallest)
+
 
 if __name__ == '__main__':
     main()
